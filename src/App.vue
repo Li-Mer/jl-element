@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import Button from "./components/Button/Button.vue";
+import type { ButtonInstance } from "./components/Button/types";
+import { ref, onMounted } from "vue";
+const buttonRef = ref<ButtonInstance | null>(null);
+
+onMounted(() => {
+  console.log(buttonRef.value.ref); // 这里可以访问到 Button 组件实例
+});
 </script>
 
 <template>
@@ -8,7 +15,7 @@ import Button from "./components/Button/Button.vue";
   </header>
 
   <main>
-    <Button type="primary" size="large" disabled>Primary Large</Button>
+    <Button type="primary" size="large" disabled ref="buttonRef">Primary Large</Button>
   </main>
 </template>
 
