@@ -12,6 +12,32 @@
     --jl-color-$(val)-light-8: mix(#fff, $(color), 0.8);
     --jl-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   } */
+  /* 1. primary 系列（基础色：#007bff） */
+  --jl-color-primary: #007bff;
+  --jl-color-primary-light-3: #4d9eff; /* mix(#fff, #007bff, 0.3) 计算结果 */
+  --jl-color-primary-light-5: #80b3ff; /* mix(#fff, #007bff, 0.5) 计算结果 */
+  --jl-color-primary-light-7: #b3d1ff; /* mix(#fff, #007bff, 0.7) 计算结果 */
+  --jl-color-primary-light-9: #e6f0ff; /* mix(#fff, #007bff, 0.9) 计算结果 */
+  --jl-color-primary-light-8: #ccddff; /* mix(#fff, #007bff, 0.8) 计算结果 */
+  --jl-color-primary-dark-2: #0066d0; /* mix(#000, #007bff, 0.2) 计算结果 */
+
+  /* 2. success 系列（基础色：#28a745） */
+  --jl-color-success: #28a745;
+  --jl-color-success-light-3: #6abf7b; /* mix(#fff, #28a745, 0.3) 计算结果 */
+  --jl-color-success-light-5: #99d2a6; /* mix(#fff, #28a745, 0.5) 计算结果 */
+  --jl-color-success-light-7: #c6e6d1; /* mix(#fff, #28a745, 0.7) 计算结果 */
+  --jl-color-success-light-9: #f3f9f6; /* mix(#fff, #28a745, 0.9) 计算结果 */
+  --jl-color-success-light-8: #dfeee6; /* mix(#fff, #28a745, 0.8) 计算结果 */
+  --jl-color-success-dark-2: #218838; /* mix(#000, #28a745, 0.2) 计算结果 */
+
+  /* 3. danger 系列（基础色：#dc3545） */
+  --jl-color-danger: #dc3545;
+  --jl-color-danger-light-3: #e5737f; /* mix(#fff, #dc3545, 0.3) 计算结果 */
+  --jl-color-danger-light-5: #ed9aa2; /* mix(#fff, #dc3545, 0.5) 计算结果 */
+  --jl-color-danger-light-7: #f5c0c6; /* mix(#fff, #dc3545, 0.7) 计算结果 */
+  --jl-color-danger-light-9: #fdeeee; /* mix(#fff, #dc3545, 0.9) 计算结果 */
+  --jl-color-danger-light-8: #f9d5d8; /* mix(#fff, #dc3545, 0.8) 计算结果 */
+  --jl-color-danger-dark-2: #c82333; /* mix(#000, #dc3545, 0.2) 计算结果 */
 
   --jl-bg-color: #ffffff;
   --jl-bg-color-page: #f2f3f5;
@@ -46,23 +72,23 @@
   --jl-border-radius-circle: 100%;
 
   /*font*/
-  --vk-font-size-extra-large: 20px;
-  --vk-font-size-large: 18px;
-  --vk-font-size-medium: 16px;
-  --vk-font-size-base: 14px;
-  --vk-font-size-small: 13px;
-  --vk-font-size-extra-small: 12px;
-  --vk-font-family:
+  --jl-font-size-extra-large: 20px;
+  --jl-font-size-large: 18px;
+  --jl-font-size-medium: 16px;
+  --jl-font-size-base: 14px;
+  --jl-font-size-small: 13px;
+  --jl-font-size-extra-small: 12px;
+  --jl-font-family:
     "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
     "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
-  --vk-font-weight-primary: 500;
+  --jl-font-weight-primary: 500;
 
   /*disabled*/
-  --vk-disabled-bg-color: var(--vk-fill-color-light);
-  --vk-disabled-text-color: var(--vk-text-color-placeholder);
-  --vk-disabled-border-color: var(--vk-border-color-light);
+  --jl-disabled-bg-color: var(--jl-fill-color-light);
+  --jl-disabled-text-color: var(--jl-text-color-placeholder);
+  --jl-disabled-border-color: var(--jl-border-color-light);
 
   /*animation*/
-  --vk-transition-duration: 0.3s;
-  --vk-transition-duration-fast: 0.2s;
+  --jl-transition-duration: 0.3s;
+  --jl-transition-duration-fast: 0.2s;
 }

@@ -42,8 +42,4 @@ defineExpose({
 });
 </script>
 
-<style>
-.jl-button {
-  background-color: var(--main--bg-color);
-}
-</style>
+<style></style>

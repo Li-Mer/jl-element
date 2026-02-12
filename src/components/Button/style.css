@@ -1,0 +1,127 @@
+.jl-button {
+  --jl-button-font-weight: var(--jl-font-weight-primary);
+  --jl-button-border-color: var(--jl-border-color);
+  --jl-button-bg-color: var(--jl-fill-color-blank);
+  --jl-button-text-color: var(--jl-text-color-regular);
+  --jl-button-disabled-text-color: var(--jl-disabled-text-color);
+  --jl-button-disabled-bg-color: var(--jl-fill-color-blank);
+  --jl-button-disabled-border-color: var(--jl-border-color-light);
+  --jl-button-hover-text-color: var(--jl-color-primary);
+  --jl-button-hover-bg-color: var(--jl-color-primary-light-9);
+  --jl-button-hover-border-color: var(--jl-color-primary-light-7);
+  --jl-button-active-text-color: var(--jl-button-hover-text-color);
+  --jl-button-active-border-color: var(--jl-color-primary);
+  --jl-button-active-bg-color: var(--jl-button-hover-bg-color);
+  --jl-button-outline-color: var(--jl-color-primary-light-5);
+  --jl-button-active-color: var(--jl-text-color-primary);
+}
+.jl-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--jl-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--jl-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--jl-button-bg-color);
+  border: var(--jl-border);
+  border-color: var(--jl-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--jl-font-size-base);
+  border-radius: var(--jl-border-radius-base);
+  & + & {
+    margin-left: 12px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--jl-button-hover-text-color);
+    border-color: var(--jl-button-hover-border-color);
+    background-color: var(--jl-button-hover-bg-color);
+    outline: none;
+  }
+  &:active {
+    color: var(--jl-button-active-text-color);
+    border-color: var(--jl-button-active-border-color);
+    background-color: var(--jl-button-active-bg-color);
+    outline: none;
+  }
+  &.is-plain {
+    --jl-button-hover-text-color: var(--jl-color-primary);
+    --jl-button-hover-bg-color: var(--jl-fill-color-blank);
+    --jl-button-hover-border-color: var(--jl-color-primary);
+  }
+  /*round*/
+  &.is-round {
+    border-radius: var(--jl-border-radius-round);
+  }
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+  /*disabled*/
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--jl-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--jl-button-disabled-bg-color);
+    border-color: var(--jl-button-disabled-border-color);
+  }
+  [class*="jl-icon"] + span {
+    margin-left: 6px;
+  }
+}
+@each $val in primary, success, warning, info, danger {
+  .jl-button--$(val) {
+    --jl-button-text-color: var(--jl-color-white);
+    --jl-button-bg-color: var(--jl-color-$(val));
+    --jl-button-border-color: var(--jl-color-$(val));
+    --jl-button-outline-color: var(--jl-color-$(val)-light-5);
+    --jl-button-active-color: var(--jl-color-$(val)-dark-2);
+    --jl-button-hover-text-color: var(--jl-color-white);
+    --jl-button-hover-bg-color: var(--jl-color-$(val)-light-3);
+    --jl-button-hover-border-color: var(--jl-color-$(val)-light-3);
+    --jl-button-active-bg-color: var(--jl-color-$(val)-dark-2);
+    --jl-button-active-border-color: var(--jl-color-$(val)-dark-2);
+    --jl-button-disabled-text-color: var(--jl-color-white);
+    --jl-button-disabled-bg-color: var(--jl-color-$(val)-light-5);
+    --jl-button-disabled-border-color: var(--jl-color-$(val)-light-5);
+  }
+  .jl-button--$(val).is-plain {
+    --jl-button-text-color: var(--jl-color-$(val));
+    --jl-button-bg-color: var(--jl-color-$(val)-light-9);
+    --jl-button-border-color: var(--jl-color-$(val)-light-5);
+    --jl-button-hover-text-color: var(--jl-color-white);
+    --jl-button-hover-bg-color: var(--jl-color-$(val));
+    --jl-button-hover-border-color: var(--jl-color-$(val));
+    --jl-button-active-text-color: var(--jl-color-white);
+  }
+}
+.jl-button--large {
+  --jl-button-size: 40px;
+  height: var(--jl-button-size);
+  padding: 12px 19px;
+  font-size: var(--jl-font-size-base);
+  border-radius: var(--jl-border-radius-base);
+}
+.jl-button--small {
+  --jl-button-size: 24px;
+  height: var(--jl-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--jl-border-radius-base) - 1px);
+}
