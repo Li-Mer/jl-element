@@ -1,0 +1,6 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": ["vitest", "vue", "vite", "postcss", "tempvar"],
+  "ignorePaths": ["node_modules", "dist", "package-lock.json"]
+}

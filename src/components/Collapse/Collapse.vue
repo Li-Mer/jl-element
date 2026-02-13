@@ -8,6 +8,7 @@
 import { ref, provide, watch } from "vue";
 import type { NameType, CollapseEmits, CollapseProps } from "./types";
 import { collapseContextKey } from "./types";
+// import Icon from "../Icon/Icon.vue";
 defineOptions({
   name: "JlCollapse",
 });

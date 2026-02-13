@@ -15,6 +15,7 @@
       @click="handleClick"
     >
       <slot name="title">{{ title }}</slot>
+      <Icon icon="angle-right" class="header-angle"></Icon>
     </div>
     <Transition name="slide" v-on="transitionEvents">
       <div class="jl-collapse-item__wrapper" v-show="isActive">
@@ -30,6 +31,7 @@
 import type { CollapseItemProps } from "./types";
 import { inject, computed } from "vue";
 import { collapseContextKey } from "./types";
+import Icon from "../Icon/Icon.vue";
 const props = defineProps<CollapseItemProps>();
 defineOptions({
   name: "JlCollapseItem",

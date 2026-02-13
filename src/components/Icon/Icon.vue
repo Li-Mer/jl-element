@@ -5,6 +5,7 @@
       [`jl-icon--${type}`]: type,
     }"
     :style="customStyles"
+    v-bind="$attrs"
   >
     <font-awesome-icon v-bind="filteredProps"></font-awesome-icon>
   </i>
@@ -15,6 +16,7 @@ import { computed } from "vue";
 import { omit } from "lodash-es";
 import type { IconProps } from "./types";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+//file:///D:\Web\v-element\资料\inheritAttrs.png
 defineOptions({
   name: "JlIcon",
   inheritAttrs: false,
