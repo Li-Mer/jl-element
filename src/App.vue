@@ -4,11 +4,19 @@ import type { ButtonInstance } from "./components/Button/types";
 import { ref, onMounted } from "vue";
 import Collapse from "./components/Collapse/Collapse.vue";
 import CollapseItem from "./components/Collapse/CollapseItem.vue";
+import Icon from "./components/Icon/Icon.vue";
 const buttonRef = ref<ButtonInstance | null>(null);
-const openValue = ref([]);
-
+const openedValue = ref(["a"]);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const size = ref<any>("3x");
 onMounted(() => {
   console.log(buttonRef.value?.ref); // 这里可以访问到 Button 组件实例
+  setTimeout(() => {
+    openedValue.value = ["a", "b"];
+    // size.value = "2xl";
+    // instance.destory()
+    // trigger.value = 'hover'
+  }, 2000);
 });
 </script>
 
@@ -16,7 +24,7 @@ onMounted(() => {
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
   </header>
-
+  <Icon icon="arrow-up" :size="size" type="danger"></Icon>
   <main>
     <Button type="primary">Primary</Button>
     <Button type="success">Success</Button>
@@ -30,7 +38,7 @@ onMounted(() => {
     <Button type="danger" plain>Danger</Button><br /><br />
     <Button size="large">Large</Button>
     <Button size="small">Small</Button><br /><br />
-    <Collapse v-model="openValue">
+    <Collapse v-model="openedValue">
       <CollapseItem name="a" title="Title A">
         <h1>headline title</h1>
         <div>this is content a aaa</div>
@@ -42,7 +50,7 @@ onMounted(() => {
         <div>this is cccc test</div>
       </CollapseItem>
     </Collapse>
-    {{ openValue }}
+    {{ openedValue }}
   </main>
 </template>
 
