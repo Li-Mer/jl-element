@@ -27,18 +27,25 @@ if (props.accordion && activeNames.value.length > 1) {
   console.warn("Accordion mode only allows one active item.");
 }
 const handleItemClick = (item: NameType) => {
+  let _activeNames = [...activeNames.value];
   if (props.accordion) {
-    activeNames.value = activeNames.value[0] === item ? [] : [item];
-  } else {
-    const index = activeNames.value.indexOf(item);
-    if (index > -1) {
-      activeNames.value.splice(index, 1);
+    _activeNames = [activeNames.value[0] === item ? "" : item].filter((n) => n) as NameType[];
+    if (activeNames.value[0] === item) {
+      _activeNames = [];
     } else {
-      activeNames.value.push(item);
+      _activeNames = [item];
+    }
+  } else {
+    const index = _activeNames.indexOf(item);
+    if (index > -1) {
+      _activeNames.splice(index, 1);
+    } else {
+      _activeNames.push(item);
     }
   }
-  emits("update:modelValue", activeNames.value);
-  emits("change", activeNames.value);
+  activeNames.value = _activeNames;
+  emits("update:modelValue", _activeNames);
+  emits("change", _activeNames);
 };
 provide(collapseContextKey, {
   activeNames,

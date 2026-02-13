@@ -26,6 +26,7 @@ import type { ButtonProps } from "./types";
 import { ref } from "vue";
 import Icon from "../Icon/Icon.vue";
 
+//name: "JlButton" 的核心价值是：调试识别、递归组件、错误定位、适配 KeepAlive；
 defineOptions({
   name: "JlButton",
 });
