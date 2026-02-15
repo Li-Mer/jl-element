@@ -5,24 +5,58 @@ import { ref, onMounted } from "vue";
 import Collapse from "./components/Collapse/Collapse.vue";
 import CollapseItem from "./components/Collapse/CollapseItem.vue";
 import Icon from "./components/Icon/Icon.vue";
+import { createPopper } from "@popperjs/core";
+import type { Instance } from "@popperjs/core";
+import Tooltip from "./components/Tooltip/Tooltip.vue";
 const buttonRef = ref<ButtonInstance | null>(null);
 const openedValue = ref(["a"]);
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const size = ref<any>("3x");
+const trigger = ref<"click" | "hover">("click");
+
+//Tooltip
+const overlayNode = ref<HTMLElement>();
+const triggerNode = ref<HTMLElement>();
+let popperInstance: Instance | null = null;
 onMounted(() => {
   console.log(buttonRef.value?.ref); // 这里可以访问到 Button 组件实例
+
+  if (overlayNode.value && triggerNode.value) {
+    popperInstance = createPopper(triggerNode.value, overlayNode.value, {
+      placement: "bottom",
+    });
+  }
+
   setTimeout(() => {
     openedValue.value = ["a", "b"];
+    popperInstance?.setOptions({
+      placement: "top",
+    });
     // size.value = "2xl";
     // instance.destory()
-    // trigger.value = 'hover'
+    trigger.value = "hover";
   }, 2000);
 });
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <Tooltip content="This is a tooltip" :trigger="trigger" placement="top">
+      <img
+        alt="Vue logo"
+        class="logo"
+        src="./assets/logo.svg"
+        width="125"
+        height="125"
+        ref="triggerNode"
+      />
+      <template #content>
+        <h1>Hello Tooltip</h1>
+      </template>
+    </Tooltip>
+    <!-- <div ref="overlayNode">
+      <h1>Hello Tooltip</h1>
+    </div> -->
   </header>
   <Icon icon="arrow-up" :size="size" type="danger"></Icon>
   <main>

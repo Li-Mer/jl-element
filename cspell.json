@@ -1,6 +1,6 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["vitest", "vue", "vite", "postcss", "tempvar"],
+  "words": ["vitest", "vue", "vite", "postcss", "tempvar", "popperjs"],
   "ignorePaths": ["node_modules", "dist", "package-lock.json"]
 }
