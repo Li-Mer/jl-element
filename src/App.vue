@@ -8,15 +8,28 @@ import Icon from "./components/Icon/Icon.vue";
 import { createPopper } from "@popperjs/core";
 import type { Instance } from "@popperjs/core";
 import Tooltip from "./components/Tooltip/Tooltip.vue";
+import type { TooltipInstance } from "./components/Tooltip/types";
+import type { Options } from "@popperjs/core";
 const buttonRef = ref<ButtonInstance | null>(null);
 const openedValue = ref(["a"]);
 const size = ref<any>("3x");
-const trigger = ref<any>("click");
 
 //Tooltip
 const overlayNode = ref<HTMLElement>();
 const triggerNode = ref<HTMLElement>();
 let popperInstance: Instance | null = null;
+const trigger = ref<any>("click");
+const tooltipRef = ref<TooltipInstance | null>(null);
+const options: Partial<Options> = {
+  placement: "right-end",
+  strategy: "fixed",
+};
+const open = () => {
+  tooltipRef.value?.show();
+};
+const close = () => {
+  tooltipRef.value?.hide();
+};
 onMounted(() => {
   console.log(buttonRef.value?.ref); // 这里可以访问到 Button 组件实例
 
@@ -28,9 +41,9 @@ onMounted(() => {
 
   setTimeout(() => {
     openedValue.value = ["a", "b"];
-    popperInstance?.setOptions({
-      placement: "top",
-    });
+    // popperInstance?.setOptions({
+    //   placement: "top",
+    // });
     // size.value = "2xl";
     // instance.destroy()
     // trigger.value = "hover";
@@ -40,7 +53,13 @@ onMounted(() => {
 
 <template>
   <header>
-    <Tooltip content="This is a tooltip" :trigger="trigger" placement="top">
+    <Tooltip
+      content="This is a tooltip"
+      :trigger="trigger"
+      ref="tooltipRef"
+      manual
+      :popper-options="options"
+    >
       <img
         alt="Vue logo"
         class="logo"
@@ -59,6 +78,8 @@ onMounted(() => {
   </header>
   <Icon icon="arrow-up" :size="size" type="danger"></Icon>
   <main>
+    <Button @click="open">Open Tooltip</Button>
+    <Button @click="close">Close Tooltip</Button>
     <Button type="primary">Primary</Button>
     <Button type="success">Success</Button>
     <Button type="info">Info</Button>

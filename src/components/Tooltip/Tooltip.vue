@@ -3,21 +3,24 @@
     <div class="jl-tooltip__trigger" ref="triggerNode" v-on="events">
       <slot></slot>
     </div>
-    <div class="jl-tooltip__popper" ref="popperNode" v-if="isOpen">
-      <slot name="content">{{ content }}</slot>
-    </div>
+    <transition :name="props.transition">
+      <div class="jl-tooltip__popper" ref="popperNode" v-if="isOpen">
+        <slot name="content">{{ content }}</slot>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, watch } from "vue";
-import type { TooltipProps, TooltipEmits } from "./types";
+import { reactive, ref, watch, onUnmounted, computed } from "vue";
+import type { TooltipProps, TooltipEmits, TooltipInstance } from "./types";
 import type { Instance } from "@popperjs/core";
 import { createPopper } from "@popperjs/core";
 import useClickOutside from "@/hooks/useClickOutside";
 const props = withDefaults(defineProps<TooltipProps>(), {
   trigger: "hover",
   placement: "bottom",
+  transition: "fade",
 });
 const emits = defineEmits<TooltipEmits>();
 
@@ -28,6 +31,13 @@ const popperContainerNode = ref<HTMLElement>();
 let popperInstance: Instance | null = null;
 const events: Record<string, () => void> = reactive({});
 const outEvents: Record<string, () => void> = reactive({});
+const popperOptions = computed(() => {
+  return {
+    placement: props.placement,
+    ...props.popperOptions,
+  };
+});
+console.log("popperOptions", popperOptions.value);
 const open = () => {
   isOpen.value = true;
   emits("visible-change", true);
@@ -42,7 +52,7 @@ const togglePopper = () => {
 };
 // @ts-expect-error: Type assertion to satisfy useClickOutside
 useClickOutside(popperContainerNode as unknown as Ref<HTMLElement>, () => {
-  if (isOpen.value && props.trigger === "click") {
+  if (isOpen.value && props.trigger === "click" && !props.manual) {
     close();
   }
 });
@@ -54,7 +64,24 @@ const attachEvents = () => {
     events["click"] = togglePopper;
   }
 };
-attachEvents();
+if (!props.manual) {
+  attachEvents();
+}
+watch(
+  () => props.manual,
+  (isManual) => {
+    if (isManual) {
+      for (const key in events) {
+        delete events[key];
+      }
+      for (const key in outEvents) {
+        delete outEvents[key];
+      }
+    } else {
+      attachEvents();
+    }
+  },
+);
 //当父组件动态修改 trigger（例如从 "hover" 变为 "click"）时，这段代码执行以下操作：清空旧事件、重新绑定事件
 watch(
   () => props.trigger,
@@ -75,13 +102,13 @@ watch(
   isOpen,
   (newValue) => {
     if (newValue) {
-      if (triggerNode.value && popperNode.value) {
-        popperInstance = createPopper(triggerNode.value, popperNode.value, {
-          placement: props.placement,
-        });
+      if (popperInstance) {
+        popperInstance.destroy();
+        popperInstance = null;
       }
-    } else {
-      popperInstance?.destroy();
+      if (triggerNode.value && popperNode.value) {
+        popperInstance = createPopper(triggerNode.value, popperNode.value, popperOptions.value);
+      }
     }
   },
   {
@@ -95,6 +122,13 @@ watch(
   },
 );
 
+onUnmounted(() => {
+  popperInstance?.destroy();
+});
+defineExpose<TooltipInstance>({
+  show: open,
+  hide: close,
+});
 defineOptions({
   name: "JlTooltip",
 });
