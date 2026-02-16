@@ -18,7 +18,7 @@ const size = ref<any>("3x");
 const overlayNode = ref<HTMLElement>();
 const triggerNode = ref<HTMLElement>();
 let popperInstance: Instance | null = null;
-const trigger = ref<any>("click");
+const trigger = ref<any>("hover");
 const tooltipRef = ref<TooltipInstance | null>(null);
 const options: Partial<Options> = {
   placement: "right-end",
@@ -35,7 +35,7 @@ onMounted(() => {
 
   if (overlayNode.value && triggerNode.value) {
     popperInstance = createPopper(triggerNode.value, overlayNode.value, {
-      placement: "bottom",
+      placement: "right",
     });
   }
 
@@ -57,8 +57,8 @@ onMounted(() => {
       content="This is a tooltip"
       :trigger="trigger"
       ref="tooltipRef"
-      manual
-      :popper-options="options"
+      :open-delay="100"
+      :close-delay="100"
     >
       <img
         alt="Vue logo"

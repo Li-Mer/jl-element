@@ -6,6 +6,7 @@
     <transition :name="props.transition">
       <div class="jl-tooltip__popper" ref="popperNode" v-if="isOpen">
         <slot name="content">{{ content }}</slot>
+        <div id="arrow" data-popper-arrow></div>
       </div>
     </transition>
   </div>
@@ -17,10 +18,13 @@ import type { TooltipProps, TooltipEmits, TooltipInstance } from "./types";
 import type { Instance } from "@popperjs/core";
 import { createPopper } from "@popperjs/core";
 import useClickOutside from "@/hooks/useClickOutside";
+import { debounce } from "lodash-es";
 const props = withDefaults(defineProps<TooltipProps>(), {
   trigger: "hover",
   placement: "bottom",
   transition: "fade",
+  openDelay: 0,
+  closeDelay: 0,
 });
 const emits = defineEmits<TooltipEmits>();
 
@@ -31,35 +35,62 @@ const popperContainerNode = ref<HTMLElement>();
 let popperInstance: Instance | null = null;
 const events: Record<string, () => void> = reactive({});
 const outEvents: Record<string, () => void> = reactive({});
+let openTimes = 0;
+let closeTimes = 0;
 const popperOptions = computed(() => {
   return {
     placement: props.placement,
+    modifiers: [
+      {
+        name: "offset",
+        options: {
+          offset: [0, 9],
+        },
+      },
+    ],
     ...props.popperOptions,
   };
 });
 console.log("popperOptions", popperOptions.value);
 const open = () => {
+  openTimes++;
+  console.log("openTimes", openTimes);
   isOpen.value = true;
   emits("visible-change", true);
 };
 const close = () => {
+  closeTimes++;
+  console.log("closeTimes", closeTimes);
   isOpen.value = false;
   emits("visible-change", false);
 };
+const openDebounce = debounce(open, props.openDelay);
+const closeDebounce = debounce(close, props.closeDelay);
+const closeFinal = () => {
+  openDebounce.cancel();
+  closeDebounce();
+};
+const openFinal = () => {
+  closeDebounce.cancel();
+  openDebounce();
+};
 const togglePopper = () => {
-  isOpen.value = !isOpen.value;
-  emits("visible-change", isOpen.value);
+  if (isOpen.value) {
+    closeFinal();
+  } else {
+    openFinal();
+  }
 };
 // @ts-expect-error: Type assertion to satisfy useClickOutside
 useClickOutside(popperContainerNode as unknown as Ref<HTMLElement>, () => {
   if (isOpen.value && props.trigger === "click" && !props.manual) {
-    close();
+    closeFinal();
   }
 });
 const attachEvents = () => {
   if (props.trigger === "hover") {
-    events["mouseenter"] = open;
-    outEvents["mouseleave"] = close;
+    events["mouseenter"] = openFinal;
+    outEvents["mouseleave"] = closeFinal;
   } else if (props.trigger === "click") {
     events["click"] = togglePopper;
   }
@@ -126,8 +157,8 @@ onUnmounted(() => {
   popperInstance?.destroy();
 });
 defineExpose<TooltipInstance>({
-  show: open,
-  hide: close,
+  show: openFinal,
+  hide: closeFinal,
 });
 defineOptions({
   name: "JlTooltip",
