@@ -1,5 +1,5 @@
 <template>
-  <div class="jl-tooltip" v-on="outEvents">
+  <div class="jl-tooltip" v-on="outEvents" ref="popperContainerNode">
     <div class="jl-tooltip__trigger" ref="triggerNode" v-on="events">
       <slot></slot>
     </div>
@@ -14,6 +14,7 @@ import { reactive, ref, watch } from "vue";
 import type { TooltipProps, TooltipEmits } from "./types";
 import type { Instance } from "@popperjs/core";
 import { createPopper } from "@popperjs/core";
+import useClickOutside from "@/hooks/useClickOutside";
 const props = withDefaults(defineProps<TooltipProps>(), {
   trigger: "hover",
   placement: "bottom",
@@ -23,6 +24,7 @@ const emits = defineEmits<TooltipEmits>();
 const isOpen = ref(false);
 const popperNode = ref<HTMLElement>();
 const triggerNode = ref<HTMLElement>();
+const popperContainerNode = ref<HTMLElement>();
 let popperInstance: Instance | null = null;
 const events: Record<string, () => void> = reactive({});
 const outEvents: Record<string, () => void> = reactive({});
@@ -38,6 +40,12 @@ const togglePopper = () => {
   isOpen.value = !isOpen.value;
   emits("visible-change", isOpen.value);
 };
+// @ts-expect-error: Type assertion to satisfy useClickOutside
+useClickOutside(popperContainerNode as unknown as Ref<HTMLElement>, () => {
+  if (isOpen.value && props.trigger === "click") {
+    close();
+  }
+});
 const attachEvents = () => {
   if (props.trigger === "hover") {
     events["mouseenter"] = open;

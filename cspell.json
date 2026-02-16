@@ -1,6 +1,15 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["vitest", "vue", "vite", "postcss", "tempvar", "popperjs"],
+  "words": [
+    "vitest",
+    "vue",
+    "vite",
+    "postcss",
+    "tempvar",
+    "popperjs",
+    "oxlint",
+    "oxlintrc"
+  ],
   "ignorePaths": ["node_modules", "dist", "package-lock.json"]
 }

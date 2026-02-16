@@ -10,9 +10,8 @@ import type { Instance } from "@popperjs/core";
 import Tooltip from "./components/Tooltip/Tooltip.vue";
 const buttonRef = ref<ButtonInstance | null>(null);
 const openedValue = ref(["a"]);
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const size = ref<any>("3x");
-const trigger = ref<"click" | "hover">("click");
+const trigger = ref<any>("click");
 
 //Tooltip
 const overlayNode = ref<HTMLElement>();
@@ -33,8 +32,8 @@ onMounted(() => {
       placement: "top",
     });
     // size.value = "2xl";
-    // instance.destory()
-    trigger.value = "hover";
+    // instance.destroy()
+    // trigger.value = "hover";
   }, 2000);
 });
 </script>
