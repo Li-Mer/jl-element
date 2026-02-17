@@ -1,64 +1,50 @@
 {
-  "hash": "ec67b684",
-  "configHash": "a5d0f5f9",
-  "lockfileHash": "f6539ef9",
-  "browserHash": "c44f3ac7",
+  "hash": "f9a071e7",
+  "browserHash": "9b901e04",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "26d542d7",
-      "needsInterop": false
-    },
-    "vitepress > @vue/devtools-api": {
-      "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
-      "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "72cdbe99",
-      "needsInterop": false
-    },
-    "vitepress > @vueuse/core": {
-      "src": "../../../../node_modules/@vueuse/core/dist/index.js",
-      "file": "vitepress___@vueuse_core.js",
-      "fileHash": "15ab5aac",
+      "fileHash": "d06aa298",
       "needsInterop": false
     },
     "@fortawesome/fontawesome-svg-core": {
       "src": "../../../../node_modules/@fortawesome/fontawesome-svg-core/index.mjs",
       "file": "@fortawesome_fontawesome-svg-core.js",
-      "fileHash": "146d83a4",
+      "fileHash": "60a99501",
       "needsInterop": false
     },
     "@fortawesome/free-solid-svg-icons": {
       "src": "../../../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
       "file": "@fortawesome_free-solid-svg-icons.js",
-      "fileHash": "b747e84a",
+      "fileHash": "6ce11e09",
       "needsInterop": false
     },
     "@vitepress-demo-preview/component": {
       "src": "../../../../node_modules/@vitepress-demo-preview/component/dist/preview-component.js",
       "file": "@vitepress-demo-preview_component.js",
-      "fileHash": "954b8a6c",
+      "fileHash": "ad7b4781",
       "needsInterop": false
     },
     "lodash-es": {
       "src": "../../../../node_modules/lodash-es/lodash.js",
       "file": "lodash-es.js",
-      "fileHash": "41055e2d",
+      "fileHash": "88aa686f",
       "needsInterop": false
     },
     "@fortawesome/vue-fontawesome": {
       "src": "../../../../node_modules/@fortawesome/vue-fontawesome/index.es.js",
       "file": "@fortawesome_vue-fontawesome.js",
-      "fileHash": "ac7dc627",
+      "fileHash": "1a3508f1",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-C6IL3AD4": {
-      "file": "chunk-C6IL3AD4.js"
+    "chunk-GWFHOMZ3": {
+      "file": "chunk-GWFHOMZ3.js"
     },
-    "chunk-JLJ73CPZ": {
-      "file": "chunk-JLJ73CPZ.js"
+    "chunk-JB5RCGVY": {
+      "file": "chunk-JB5RCGVY.js"
     }
   }
 }

@@ -1,7 +1,5 @@
 import { defineConfig } from "vitepress";
 import { fileURLToPath, URL } from "node:url";
-import vueJsx from "@vitejs/plugin-vue-jsx";
-import VueMacros from "unplugin-vue-macros/vite";
 import { containerPreview, componentPreview } from "@vitepress-demo-preview/plugin";
 
 // https://vitepress.dev/reference/site-config
@@ -10,13 +8,6 @@ export default defineConfig({
   description: "A VitePress Site",
   // srcDir: "components",
   vite: {
-    plugins: [
-      VueMacros({
-        plugins: {
-          vueJsx: vueJsx(),
-        },
-      }),
-    ],
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("../../src", import.meta.url)),

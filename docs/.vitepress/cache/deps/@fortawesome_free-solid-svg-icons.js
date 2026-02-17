@@ -11694,4 +11694,13 @@ export {
   icons as fas,
   prefix
 };
+/*! Bundled license information:
+
+@fortawesome/free-solid-svg-icons/index.mjs:
+  (*!
+   * Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com
+   * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+   * Copyright 2026 Fonticons, Inc.
+   *)
+*/
 //# sourceMappingURL=@fortawesome_free-solid-svg-icons.js.map

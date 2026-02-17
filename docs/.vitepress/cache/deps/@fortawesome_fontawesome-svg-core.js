@@ -11,7 +11,7 @@ import {
   parse$1,
   text,
   toHtml$1
-} from "./chunk-C6IL3AD4.js";
+} from "./chunk-GWFHOMZ3.js";
 export {
   api,
   config$1 as config,
@@ -26,3 +26,4 @@ export {
   text,
   toHtml$1 as toHtml
 };
+//# sourceMappingURL=@fortawesome_fontawesome-svg-core.js.map

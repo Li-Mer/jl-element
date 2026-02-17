@@ -1,17 +1,21 @@
 // node_modules/@fortawesome/fontawesome-svg-core/index.mjs
 function _arrayLikeToArray(r2, a2) {
   (null == a2 || a2 > r2.length) && (a2 = r2.length);
-  for (var e2 = 0, n2 = Array(a2); e2 < a2; e2++) n2[e2] = r2[e2];
+  for (var e2 = 0, n2 = Array(a2); e2 < a2; e2++)
+    n2[e2] = r2[e2];
   return n2;
 }
 function _arrayWithHoles(r2) {
-  if (Array.isArray(r2)) return r2;
+  if (Array.isArray(r2))
+    return r2;
 }
 function _arrayWithoutHoles(r2) {
-  if (Array.isArray(r2)) return _arrayLikeToArray(r2);
+  if (Array.isArray(r2))
+    return _arrayLikeToArray(r2);
 }
 function _classCallCheck(a2, n2) {
-  if (!(a2 instanceof n2)) throw new TypeError("Cannot call a class as a function");
+  if (!(a2 instanceof n2))
+    throw new TypeError("Cannot call a class as a function");
 }
 function _defineProperties(e2, r2) {
   for (var t2 = 0; t2 < r2.length; t2++) {
@@ -65,7 +69,8 @@ function _createForOfIteratorHelper(r2, e2) {
       try {
         a2 || null == t2.return || t2.return();
       } finally {
-        if (u2) throw o2;
+        if (u2)
+          throw o2;
       }
     }
   };
@@ -79,7 +84,8 @@ function _defineProperty(e2, r2, t2) {
   }) : e2[r2] = t2, e2;
 }
 function _inherits(t2, e2) {
-  if ("function" != typeof e2 && null !== e2) throw new TypeError("Super expression must either be null or a function");
+  if ("function" != typeof e2 && null !== e2)
+    throw new TypeError("Super expression must either be null or a function");
   t2.prototype = Object.create(e2 && e2.prototype, {
     constructor: {
       value: t2,
@@ -91,7 +97,8 @@ function _inherits(t2, e2) {
   }), e2 && _setPrototypeOf(t2, e2);
 }
 function _iterableToArray(r2) {
-  if ("undefined" != typeof Symbol && null != r2[Symbol.iterator] || null != r2["@@iterator"]) return Array.from(r2);
+  if ("undefined" != typeof Symbol && null != r2[Symbol.iterator] || null != r2["@@iterator"])
+    return Array.from(r2);
 }
 function _iterableToArrayLimit(r2, l2) {
   var t2 = null == r2 ? null : "undefined" != typeof Symbol && r2[Symbol.iterator] || r2["@@iterator"];
@@ -99,16 +106,21 @@ function _iterableToArrayLimit(r2, l2) {
     var e2, n2, i2, u2, a2 = [], f2 = true, o2 = false;
     try {
       if (i2 = (t2 = t2.call(r2)).next, 0 === l2) {
-        if (Object(t2) !== t2) return;
+        if (Object(t2) !== t2)
+          return;
         f2 = false;
-      } else for (; !(f2 = (e2 = i2.call(t2)).done) && (a2.push(e2.value), a2.length !== l2); f2 = true) ;
+      } else
+        for (; !(f2 = (e2 = i2.call(t2)).done) && (a2.push(e2.value), a2.length !== l2); f2 = true)
+          ;
     } catch (r3) {
       o2 = true, n2 = r3;
     } finally {
       try {
-        if (!f2 && null != t2.return && (u2 = t2.return(), Object(u2) !== u2)) return;
+        if (!f2 && null != t2.return && (u2 = t2.return(), Object(u2) !== u2))
+          return;
       } finally {
-        if (o2) throw n2;
+        if (o2)
+          throw n2;
       }
     }
     return a2;
@@ -153,11 +165,13 @@ function _toConsumableArray(r2) {
   return _arrayWithoutHoles(r2) || _iterableToArray(r2) || _unsupportedIterableToArray(r2) || _nonIterableSpread();
 }
 function _toPrimitive(t2, r2) {
-  if ("object" != typeof t2 || !t2) return t2;
+  if ("object" != typeof t2 || !t2)
+    return t2;
   var e2 = t2[Symbol.toPrimitive];
   if (void 0 !== e2) {
     var i2 = e2.call(t2, r2 || "default");
-    if ("object" != typeof i2) return i2;
+    if ("object" != typeof i2)
+      return i2;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
   return ("string" === r2 ? String : Number)(t2);
@@ -176,7 +190,8 @@ function _typeof(o2) {
 }
 function _unsupportedIterableToArray(r2, a2) {
   if (r2) {
-    if ("string" == typeof r2) return _arrayLikeToArray(r2, a2);
+    if ("string" == typeof r2)
+      return _arrayLikeToArray(r2, a2);
     var t2 = {}.toString.call(r2).slice(8, -1);
     return "Object" === t2 && r2.constructor && (t2 = r2.constructor.name), "Map" === t2 || "Set" === t2 ? Array.from(r2) : "Arguments" === t2 || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t2) ? _arrayLikeToArray(r2, a2) : void 0;
   }
@@ -194,9 +209,11 @@ function _wrapRegExp() {
     var p2 = r2.get(t2);
     return Object.keys(p2).reduce(function(r3, t3) {
       var o2 = p2[t3];
-      if ("number" == typeof o2) r3[t3] = e3[o2];
+      if ("number" == typeof o2)
+        r3[t3] = e3[o2];
       else {
-        for (var i2 = 0; void 0 === e3[o2[i2]] && i2 + 1 < o2.length; ) i2++;
+        for (var i2 = 0; void 0 === e3[o2[i2]] && i2 + 1 < o2.length; )
+          i2++;
         r3[t3] = e3[o2[i2]];
       }
       return r3;
@@ -214,7 +231,8 @@ function _wrapRegExp() {
     if ("string" == typeof p2) {
       var o2 = r2.get(this);
       return e2[Symbol.replace].call(this, t2, p2.replace(/\$<([^>]+)(>|$)/g, function(e3, r3, t3) {
-        if ("" === t3) return e3;
+        if ("" === t3)
+          return e3;
         var p3 = o2[r3];
         return Array.isArray(p3) ? "$" + p3.join("$") : "number" == typeof p3 ? "$" + p3 : "";
       }));
@@ -239,10 +257,14 @@ var _PERFORMANCE = {
   measure: noop
 };
 try {
-  if (typeof window !== "undefined") _WINDOW = window;
-  if (typeof document !== "undefined") _DOCUMENT = document;
-  if (typeof MutationObserver !== "undefined") _MUTATION_OBSERVER = MutationObserver;
-  if (typeof performance !== "undefined") _PERFORMANCE = performance;
+  if (typeof window !== "undefined")
+    _WINDOW = window;
+  if (typeof document !== "undefined")
+    _DOCUMENT = document;
+  if (typeof MutationObserver !== "undefined")
+    _MUTATION_OBSERVER = MutationObserver;
+  if (typeof performance !== "undefined")
+    _PERFORMANCE = performance;
 } catch (e2) {
 }
 var _ref = _WINDOW.navigator || {};
@@ -1082,13 +1104,13 @@ var HTML_CLASS_I2SVG_BASE_CLASS = "fontawesome-i2svg";
 var MUTATION_APPROACH_ASYNC = "async";
 var TAGNAMES_TO_SKIP_FOR_PSEUDOELEMENTS = ["HTML", "HEAD", "STYLE", "SCRIPT"];
 var PSEUDO_ELEMENTS = ["::before", "::after", ":before", ":after"];
-var PRODUCTION = (function() {
+var PRODUCTION = function() {
   try {
     return false;
   } catch (e$$1) {
     return false;
   }
-})();
+}();
 function familyProxy(obj) {
   return new Proxy(obj, {
     get: function get2(target, prop) {
@@ -1128,9 +1150,12 @@ function getAttrConfig(attr) {
   }
 }
 function coerce(val) {
-  if (val === "") return true;
-  if (val === "false") return false;
-  if (val === "true") return true;
+  if (val === "")
+    return true;
+  if (val === "false")
+    return false;
+  if (val === "true")
+    return true;
   return val;
 }
 if (DOCUMENT && typeof DOCUMENT.querySelector === "function") {
@@ -1164,7 +1189,8 @@ if (initial.familyPrefix) {
   initial.cssPrefix = initial.familyPrefix;
 }
 var _config = _objectSpread2(_objectSpread2({}, _default), initial);
-if (!_config.autoReplaceSvg) _config.observeMutations = false;
+if (!_config.autoReplaceSvg)
+  _config.observeMutations = false;
 var config = {};
 Object.keys(_default).forEach(function(key) {
   Object.defineProperty(config, key, {
@@ -1346,10 +1372,14 @@ var InjectCSS = {
   }
 };
 var w$2 = WINDOW || {};
-if (!w$2[NAMESPACE_IDENTIFIER]) w$2[NAMESPACE_IDENTIFIER] = {};
-if (!w$2[NAMESPACE_IDENTIFIER].styles) w$2[NAMESPACE_IDENTIFIER].styles = {};
-if (!w$2[NAMESPACE_IDENTIFIER].hooks) w$2[NAMESPACE_IDENTIFIER].hooks = {};
-if (!w$2[NAMESPACE_IDENTIFIER].shims) w$2[NAMESPACE_IDENTIFIER].shims = [];
+if (!w$2[NAMESPACE_IDENTIFIER])
+  w$2[NAMESPACE_IDENTIFIER] = {};
+if (!w$2[NAMESPACE_IDENTIFIER].styles)
+  w$2[NAMESPACE_IDENTIFIER].styles = {};
+if (!w$2[NAMESPACE_IDENTIFIER].hooks)
+  w$2[NAMESPACE_IDENTIFIER].hooks = {};
+if (!w$2[NAMESPACE_IDENTIFIER].shims)
+  w$2[NAMESPACE_IDENTIFIER].shims = [];
 var namespace = w$2[NAMESPACE_IDENTIFIER];
 var functions = [];
 var _listener = function listener() {
@@ -1362,10 +1392,12 @@ var _listener = function listener() {
 var loaded = false;
 if (IS_DOM) {
   loaded = (DOCUMENT.documentElement.doScroll ? /^loaded|^c/ : /^loaded|^i|^c/).test(DOCUMENT.readyState);
-  if (!loaded) DOCUMENT.addEventListener("DOMContentLoaded", _listener);
+  if (!loaded)
+    DOCUMENT.addEventListener("DOMContentLoaded", _listener);
 }
 function domready(fn) {
-  if (!IS_DOM) return;
+  if (!IS_DOM)
+    return;
   loaded ? setTimeout(fn, 0) : functions.push(fn);
 }
 function toHtml(abstractNodes) {
@@ -1406,7 +1438,8 @@ var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
   return result;
 };
 function toHex(unicode) {
-  if (_toConsumableArray(unicode).length !== 1) return null;
+  if (_toConsumableArray(unicode).length !== 1)
+    return null;
   return unicode.codePointAt(0).toString(16);
 }
 function normalizeIcons(icons) {
@@ -1759,7 +1792,7 @@ function getDefaultCanonicalPrefix(prefixOptions) {
   }
   return canonical;
 }
-var Library = (function() {
+var Library = function() {
   function Library2() {
     _classCallCheck(this, Library2);
     this.definitions = {};
@@ -1776,7 +1809,8 @@ var Library = (function() {
         _this.definitions[key] = _objectSpread2(_objectSpread2({}, _this.definitions[key] || {}), additions[key]);
         defineIcons(key, additions[key]);
         var longPrefix = PREFIX_TO_LONG_STYLE[i][key];
-        if (longPrefix) defineIcons(longPrefix, additions[key]);
+        if (longPrefix)
+          defineIcons(longPrefix, additions[key]);
         build();
       });
     }
@@ -1794,7 +1828,8 @@ var Library = (function() {
       Object.keys(normalized).map(function(key) {
         var _normalized$key = normalized[key], prefix = _normalized$key.prefix, iconName = _normalized$key.iconName, icon3 = _normalized$key.icon;
         var aliases = icon3[2];
-        if (!additions[prefix]) additions[prefix] = {};
+        if (!additions[prefix])
+          additions[prefix] = {};
         if (aliases.length > 0) {
           aliases.forEach(function(alias) {
             if (typeof alias === "string") {
@@ -1807,7 +1842,7 @@ var Library = (function() {
       return additions;
     }
   }]);
-})();
+}();
 var _plugins = [];
 var _hooks = {};
 var providers = {};
@@ -1882,7 +1917,8 @@ function findIconDefinition(iconLookup) {
   }
   var iconName = iconLookup.iconName;
   var prefix = iconLookup.prefix || getDefaultUsablePrefix();
-  if (!iconName) return;
+  if (!iconName)
+    return;
   iconName = byAlias(prefix, iconName) || iconName;
   return iconFromMapping(library.definitions, prefix, iconName) || iconFromMapping(namespace.styles, prefix, iconName);
 }
@@ -1967,9 +2003,10 @@ var api = {
 var autoReplace = function autoReplace2() {
   var params = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
   var _params$autoReplaceSv = params.autoReplaceSvgRoot, autoReplaceSvgRoot = _params$autoReplaceSv === void 0 ? DOCUMENT : _params$autoReplaceSv;
-  if ((Object.keys(namespace.styles).length > 0 || config.autoFetchSvg) && IS_DOM && config.autoReplaceSvg) api.dom.i2svg({
-    node: autoReplaceSvgRoot
-  });
+  if ((Object.keys(namespace.styles).length > 0 || config.autoFetchSvg) && IS_DOM && config.autoReplaceSvg)
+    api.dom.i2svg({
+      node: autoReplaceSvgRoot
+    });
 };
 function domVariants(val, abstractCreator) {
   Object.defineProperty(val, "abstract", {
@@ -1984,7 +2021,8 @@ function domVariants(val, abstractCreator) {
   });
   Object.defineProperty(val, "node", {
     get: function get2() {
-      if (!IS_DOM) return void 0;
+      if (!IS_DOM)
+        return void 0;
       var container = DOCUMENT.createElement("div");
       container.innerHTML = val.html;
       return container.children;
@@ -2362,7 +2400,8 @@ function observe(options) {
   }
   var _options$treeCallback = options.treeCallback, treeCallback = _options$treeCallback === void 0 ? noop$2 : _options$treeCallback, _options$nodeCallback = options.nodeCallback, nodeCallback = _options$nodeCallback === void 0 ? noop$2 : _options$nodeCallback, _options$pseudoElemen = options.pseudoElementsCallback, pseudoElementsCallback = _options$pseudoElemen === void 0 ? noop$2 : _options$pseudoElemen, _options$observeMutat = options.observeMutationsRoot, observeMutationsRoot = _options$observeMutat === void 0 ? DOCUMENT : _options$observeMutat;
   mo = new MUTATION_OBSERVER(function(objects) {
-    if (disabled) return;
+    if (disabled)
+      return;
     var defaultPrefix = getDefaultUsablePrefix();
     toArray(objects).forEach(function(mutationRecord) {
       if (mutationRecord.type === "childList" && mutationRecord.addedNodes.length > 0 && !isWatched(mutationRecord.addedNodes[0])) {
@@ -2378,14 +2417,16 @@ function observe(options) {
         if (mutationRecord.attributeName === "class" && hasPrefixAndIcon(mutationRecord.target)) {
           var _getCanonicalIcon = getCanonicalIcon(classArray(mutationRecord.target)), prefix = _getCanonicalIcon.prefix, iconName = _getCanonicalIcon.iconName;
           mutationRecord.target.setAttribute(DATA_PREFIX, prefix || defaultPrefix);
-          if (iconName) mutationRecord.target.setAttribute(DATA_ICON, iconName);
+          if (iconName)
+            mutationRecord.target.setAttribute(DATA_ICON, iconName);
         } else if (hasBeenReplaced(mutationRecord.target)) {
           nodeCallback(mutationRecord.target);
         }
       }
     });
   });
-  if (!IS_DOM) return;
+  if (!IS_DOM)
+    return;
   mo.observe(observeMutationsRoot, {
     childList: true,
     attributes: true,
@@ -2394,7 +2435,8 @@ function observe(options) {
   });
 }
 function disconnect() {
-  if (!mo) return;
+  if (!mo)
+    return;
   mo.disconnect();
 }
 function styleParser(node) {
@@ -2506,7 +2548,8 @@ function getKnownPrefixes() {
 }
 function onTree(root) {
   var callback = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : null;
-  if (!IS_DOM) return Promise.resolve();
+  if (!IS_DOM)
+    return Promise.resolve();
   var htmlClassList = DOCUMENT.documentElement.classList;
   var hclAdd = function hclAdd2(suffix) {
     return htmlClassList.add("".concat(HTML_CLASS_I2SVG_BASE_CLASS, "-").concat(suffix));
@@ -2557,7 +2600,8 @@ function onTree(root) {
         hclAdd("active");
         hclAdd("complete");
         hclRemove("pending");
-        if (typeof callback === "function") callback();
+        if (typeof callback === "function")
+          callback();
         mark();
         resolve();
       });
@@ -2591,7 +2635,8 @@ function resolveIcons(next) {
 var render = function render2(iconDefinition) {
   var params = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
   var _params$transform = params.transform, transform = _params$transform === void 0 ? meaninglessTransform : _params$transform, _params$symbol = params.symbol, symbol = _params$symbol === void 0 ? false : _params$symbol, _params$mask = params.mask, mask = _params$mask === void 0 ? null : _params$mask, _params$maskId = params.maskId, maskId = _params$maskId === void 0 ? null : _params$maskId, _params$classes = params.classes, classes = _params$classes === void 0 ? [] : _params$classes, _params$attributes = params.attributes, attributes = _params$attributes === void 0 ? {} : _params$attributes, _params$styles = params.styles, styles2 = _params$styles === void 0 ? {} : _params$styles;
-  if (!iconDefinition) return;
+  if (!iconDefinition)
+    return;
   var prefix = iconDefinition.prefix, iconName = iconDefinition.iconName, icon3 = iconDefinition.icon;
   return domVariants(_objectSpread2({
     type: "icon"
@@ -2921,7 +2966,8 @@ var hasPseudoElement = function hasPseudoElement2(selector) {
   });
 };
 var parseCSSRuleForPseudos = function parseCSSRuleForPseudos2(selectorText) {
-  if (!selectorText) return [];
+  if (!selectorText)
+    return [];
   var selectorSet = /* @__PURE__ */ new Set();
   var selectors = selectorText.split(/,(?![^()]*\))/).map(function(s$$1) {
     return s$$1.trim();
@@ -2953,7 +2999,8 @@ var parseCSSRuleForPseudos = function parseCSSRuleForPseudos2(selectorText) {
 };
 function searchPseudoElements(root) {
   var useAsNodeList = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : false;
-  if (!IS_DOM) return;
+  if (!IS_DOM)
+    return;
   var nodeList;
   if (useAsNodeList) {
     nodeList = root;
@@ -2999,7 +3046,8 @@ function searchPseudoElements(root) {
     } finally {
       _iterator2.f();
     }
-    if (!selectorSet.size) return;
+    if (!selectorSet.size)
+      return;
     var cleanSelectors = Array.from(selectorSet).join(", ");
     try {
       nodeList = root.querySelectorAll(cleanSelectors);
@@ -3414,4 +3462,13 @@ export {
   text,
   counter
 };
-//# sourceMappingURL=chunk-C6IL3AD4.js.map
+/*! Bundled license information:
+
+@fortawesome/fontawesome-svg-core/index.mjs:
+  (*!
+   * Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com
+   * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+   * Copyright 2026 Fonticons, Inc.
+   *)
+*/
+//# sourceMappingURL=chunk-GWFHOMZ3.js.map
