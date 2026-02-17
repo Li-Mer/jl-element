@@ -17,7 +17,7 @@ import { reactive, ref, watch, onUnmounted, computed } from "vue";
 import type { TooltipProps, TooltipEmits, TooltipInstance } from "./types";
 import type { Instance } from "@popperjs/core";
 import { createPopper } from "@popperjs/core";
-import useClickOutside from "@/hooks/useClickOutside";
+import useClickOutside from "../../hooks/useClickOutside";
 import { debounce } from "lodash-es";
 const props = withDefaults(defineProps<TooltipProps>(), {
   trigger: "hover",
