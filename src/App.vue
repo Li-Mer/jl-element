@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Button from "./components/Button/Button.vue";
 import type { ButtonInstance } from "./components/Button/types";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, h } from "vue";
 import Collapse from "./components/Collapse/Collapse.vue";
 import CollapseItem from "./components/Collapse/CollapseItem.vue";
 import Icon from "./components/Icon/Icon.vue";
@@ -10,6 +10,8 @@ import type { Instance } from "@popperjs/core";
 import Tooltip from "./components/Tooltip/Tooltip.vue";
 import type { TooltipInstance } from "./components/Tooltip/types";
 import type { Options } from "@popperjs/core";
+import Dropdown from "./components/Dropdown/Dropdown.vue";
+import type { MenuOption } from "./components/Dropdown/types";
 const buttonRef = ref<ButtonInstance | null>(null);
 const openedValue = ref(["a"]);
 const size = ref<any>("3x");
@@ -20,15 +22,26 @@ const triggerNode = ref<HTMLElement>();
 let popperInstance: Instance | null = null;
 const trigger = ref<any>("hover");
 const tooltipRef = ref<TooltipInstance | null>(null);
-const options: Partial<Options> = {
-  placement: "right-end",
-  strategy: "fixed",
-};
+// const options: Partial<Options> = {
+//   placement: "right-end",
+//   strategy: "fixed",
+// };
 const open = () => {
   tooltipRef.value?.show();
 };
 const close = () => {
   tooltipRef.value?.hide();
+};
+
+//Dropdown
+const options: MenuOption[] = [
+  { key: "1", label: h("b", "this is bold") },
+  { key: "2", label: "item2", disabled: true },
+  { key: "3", label: "item3", divided: true },
+  { key: "4", label: "item4" },
+];
+const inlineConsole = (...args: any) => {
+  console.log(...args);
 };
 onMounted(() => {
   console.log(buttonRef.value?.ref); // 这里可以访问到 Button 组件实例
@@ -53,12 +66,14 @@ onMounted(() => {
 
 <template>
   <header>
-    <Tooltip
+    <Dropdown
       content="This is a tooltip"
       :trigger="trigger"
       ref="tooltipRef"
-      :open-delay="100"
-      :close-delay="100"
+      :menu-options="options"
+      @visible-change="(e) => inlineConsole('visible-change', e)"
+      @select="(e) => inlineConsole('select', e)"
+      manual
     >
       <img
         alt="Vue logo"
@@ -71,7 +86,7 @@ onMounted(() => {
       <template #content>
         <h1>Hello Tooltip</h1>
       </template>
-    </Tooltip>
+    </Dropdown>
     <!-- <div ref="overlayNode">
       <h1>Hello Tooltip</h1>
     </div> -->
