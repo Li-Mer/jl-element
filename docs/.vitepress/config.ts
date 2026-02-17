@@ -16,8 +16,8 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
-      md.use(containerPreview);
-      md.use(componentPreview);
+      md.use(containerPreview as any);
+      md.use(componentPreview as any);
     },
   },
   themeConfig: {

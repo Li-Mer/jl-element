@@ -67,6 +67,7 @@
   &.is-circle {
     border-radius: 50%;
     padding: 8px;
+    width: 32px;
   }
   /*disabled*/
   &.is-disabled,
@@ -117,6 +118,11 @@
   padding: 12px 19px;
   font-size: var(--jl-font-size-base);
   border-radius: var(--jl-border-radius-base);
+
+  &.is-circle {
+    width: var(--jl-button-size);
+    padding: 12px;
+  }
 }
 .jl-button--small {
   --jl-button-size: 24px;
@@ -124,4 +130,9 @@
   padding: 5px 11px;
   font-size: 12px;
   border-radius: calc(var(--jl-border-radius-base) - 1px);
+
+  &.is-circle {
+    width: var(--jl-button-size);
+    padding: 5px;
+  }
 }

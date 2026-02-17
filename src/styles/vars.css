@@ -39,6 +39,24 @@
   --jl-color-danger-light-8: #f9d5d8; /* mix(#fff, #dc3545, 0.8) 计算结果 */
   --jl-color-danger-dark-2: #c82333; /* mix(#000, #dc3545, 0.2) 计算结果 */
 
+  /* 4. warning 系列（基础色：#e6a23c） */
+  --jl-color-warning: #e6a23c;
+  --jl-color-warning-light-3: #eebe77;
+  --jl-color-warning-light-5: #f3d19e;
+  --jl-color-warning-light-7: #f8e3c5;
+  --jl-color-warning-light-9: #fdf6ec;
+  --jl-color-warning-light-8: #faecd8;
+  --jl-color-warning-dark-2: #b88230;
+
+  /* 5. info 系列（基础色：#909399） */
+  --jl-color-info: #909399;
+  --jl-color-info-light-3: #b1b3b8;
+  --jl-color-info-light-5: #c8c9cc;
+  --jl-color-info-light-7: #dedfe0;
+  --jl-color-info-light-9: #f4f4f5;
+  --jl-color-info-light-8: #e9e9eb;
+  --jl-color-info-dark-2: #73767a;
+
   --jl-bg-color: #ffffff;
   --jl-bg-color-page: #f2f3f5;
   --jl-bg-color-overlay: #ffffff;
