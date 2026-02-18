@@ -16,7 +16,7 @@ import { computed } from "vue";
 import { omit } from "lodash-es";
 import type { IconProps } from "./types";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-//file:///D:\Web\v-element\资料\inheritAttrs.png
+//file:///D:\Web\jl-element\资料\inheritAttrs.png
 defineOptions({
   name: "JlIcon",
   inheritAttrs: false,

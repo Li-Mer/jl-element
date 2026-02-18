@@ -35,7 +35,7 @@ export default defineConfig({
       name: "JlElement",
       fileName: "jl-element",
     },
-    //file:///D:\Web\v-element\资料\打包.md
+    //file:///D:\Web\jl-element\资料\打包.md
     rollupOptions: {
       external: ["vue", "@fortawesome/fontawesome-svg-core", "@fortawesome/free-solid-svg-icons"],
       output: {

@@ -33,7 +33,7 @@ export default defineConfig({
       fileName: "jl-element",
       format: ["umd"],
     },
-    //file:///D:\Web\v-element\资料\打包.md
+    //file:///D:\Web\jl-element\资料\打包.md
     rollupOptions: {
       external: ["vue"],
       output: {

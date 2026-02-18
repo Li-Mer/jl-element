@@ -1,33 +1,50 @@
 {
-  "name": "v-element",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@jinli6386/element",
+  "version": "1.0.0",
+  "description": "Vue3 components library",
   "type": "module",
+  "author": "Li Jin",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "UI",
+    "Vue3"
+  ],
   "files": [
     "dist"
   ],
-  "main": "./dist/jl-element.umd.cjs",
-  "module": "./dist/jl-element.js",
+  "sideEffects": [
+    "dist/index.css"
+  ],
+  "main": "./dist/umd/jl-element.umd.cjs",
+  "module": "./dist/es/jl-element.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/jl-element.js",
-      "require": "./dist/jl-element.umd.cjs"
+      "import": "./dist/es/jl-element.js",
+      "require": "./dist/umd/jl-element.umd.cjs"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
     }
   },
   "scripts": {
     "dev": "vite",
-    "build": "run-p build-es build-umd",
+    "build": "npm run build-only && npm run move-style",
     "preview": "vite preview",
-    "build-only": "vite build",
+    "build-only": "run-p build-es build-umd",
     "build-umd": "vite build --config vite.umd.config.ts",
     "build-es": "vite build --config vite.es.config.ts",
+    "move-style": "move-file dist/es/index.css dist/index.css",
     "type-check": "vue-tsc --build",
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
@@ -35,7 +52,9 @@
     "@fortawesome/vue-fontawesome": "^3.1.3",
     "@popperjs/core": "^2.11.8",
     "@types/lodash-es": "^4.17.12",
-    "lodash-es": "^4.17.23",
+    "lodash-es": "^4.17.23"
+  },
+  "peerDependencies": {
     "vue": "^3.5.27"
   },
   "devDependencies": {
@@ -54,6 +73,7 @@
     "eslint-plugin-vue": "~10.7.0",
     "jiti": "^2.6.1",
     "jsdom": "^28.0.0",
+    "move-file-cli": "^3.0.0",
     "npm-run-all2": "^8.0.4",
     "oxlint": "~1.42.0",
     "postcss-color-mix": "^1.1.0",
@@ -68,6 +88,7 @@
     "vite-plugin-vue-devtools": "^8.0.5",
     "vitepress": "^1.0.0-alpha.65",
     "vitest": "^4.0.18",
+    "vue": "^3.5.27",
     "vue-tsc": "^3.0.8"
   },
   "engines": {
