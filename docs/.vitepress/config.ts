@@ -4,8 +4,9 @@ import { containerPreview, componentPreview } from "@vitepress-demo-preview/plug
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
+  title: "JL Element",
+  description: "基于 Vue3 的组件库",
+  base: "/jl-element/",
   // srcDir: "components",
   vite: {
     resolve: {

@@ -31,7 +31,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/index.ts"),
       name: "JlElement",
       fileName: "jl-element",
-      format: ["umd"],
+      formats: ["umd"],
     },
     //file:///D:\Web\jl-element\资料\打包.md
     rollupOptions: {
