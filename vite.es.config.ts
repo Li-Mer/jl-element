@@ -22,6 +22,7 @@ export default defineConfig({
     vueDevTools(),
     dts({
       tsconfigPath: "./tsconfig.app.json",
+      outDir: "dist/types",
     }),
   ],
   resolve: {
@@ -30,19 +31,23 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "dist/es",
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "JlElement",
       fileName: "jl-element",
+      format: ["es"],
     },
     //file:///D:\Web\v-element\资料\打包.md
     rollupOptions: {
-      external: ["vue", "@fortawesome/fontawesome-svg-core", "@fortawesome/free-solid-svg-icons"],
+      external: [
+        "vue",
+        "@fortawesome/fontawesome-svg-core",
+        "@fortawesome/free-solid-svg-icons",
+        "@fortawesome/vue-fontawesome",
+        "@popperjs/core",
+      ],
       output: {
-        exports: "named", // 确保导出方式为 named
-        globals: {
-          vue: "Vue",
-        },
         assetFileNames: (chunkInfo) => {
           if (chunkInfo.names.some((n) => n.endsWith(".css"))) {
             return "index.css";

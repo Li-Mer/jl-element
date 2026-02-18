@@ -3,11 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/jl-element.umd.cjs",
+  "module": "./dist/jl-element.js",
+  "exports": {
+    ".": {
+      "import": "./dist/jl-element.js",
+      "require": "./dist/jl-element.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "run-p build-es build-umd",
     "preview": "vite preview",
     "build-only": "vite build",
+    "build-umd": "vite build --config vite.umd.config.ts",
+    "build-es": "vite build --config vite.es.config.ts",
     "type-check": "vue-tsc --build",
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
@@ -51,6 +64,7 @@
     "typescript": "~5.9.3",
     "unplugin-vue-macros": "^2.14.5",
     "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.5.4",
     "vite-plugin-vue-devtools": "^8.0.5",
     "vitepress": "^1.0.0-alpha.65",
     "vitest": "^4.0.18",
