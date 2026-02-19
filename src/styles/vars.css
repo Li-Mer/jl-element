@@ -110,3 +110,77 @@
   --jl-transition-duration: 0.3s;
   --jl-transition-duration-fast: 0.2s;
 }
+
+/* 浅色模式样式 */
+html:not(.dark) {
+  /* 背景色 */
+  --jl-bg-color: #ffffff;
+  --jl-bg-color-page: #f2f3f5;
+  --jl-bg-color-overlay: #ffffff;
+
+  /* 文字颜色 */
+  --jl-text-color-primary: #303133;
+  --jl-text-color-regular: #606266;
+  --jl-text-color-secondary: #909399;
+  --jl-text-color-placeholder: #a8abb2;
+  --jl-text-color-disabled: #c0c4cc;
+
+  /* 边框颜色 */
+  --jl-border-color: #dcdfe6;
+  --jl-border-color-light: #e4e7ed;
+  --jl-border-color-lighter: #ebeef5;
+  --jl-border-color-extra-light: #f2f6fc;
+  --jl-border-color-dark: #d4d7de;
+  --jl-border-color-darker: #cdd0d6;
+
+  /* 填充色 */
+  --jl-fill-color: #f0f2f5;
+  --jl-fill-color-light: #f5f7fa;
+  --jl-fill-color-lighter: #fafafa;
+  --jl-fill-color-extra-light: #fafcff;
+  --jl-fill-color-dark: #ebedf0;
+  --jl-fill-color-darker: #e6e8eb;
+  --jl-fill-color-blank: #ffffff;
+
+  /* 禁用状态 */
+  --jl-disabled-bg-color: #f5f7fa;
+  --jl-disabled-text-color: #a8abb2;
+  --jl-disabled-border-color: #e4e7ed;
+}
+
+/* 深色模式样式 */
+html.dark {
+  /* 背景色 */
+  --jl-bg-color: #1a1a1a;
+  --jl-bg-color-page: #0d0d0d;
+  --jl-bg-color-overlay: #1a1a1a;
+
+  /* 文字颜色 - 深色模式下使用浅色文字 */
+  --jl-text-color-primary: #e5e5e5;
+  --jl-text-color-regular: #b3b3b3;
+  --jl-text-color-secondary: #909399;
+  --jl-text-color-placeholder: #6c6c6c;
+  --jl-text-color-disabled: #4d4d4d;
+
+  /* 边框颜色 */
+  --jl-border-color: #414243;
+  --jl-border-color-light: #363637;
+  --jl-border-color-lighter: #2b2b2c;
+  --jl-border-color-extra-light: #252526;
+  --jl-border-color-dark: #4d4d4d;
+  --jl-border-color-darker: #5a5a5a;
+
+  /* 填充色 */
+  --jl-fill-color: #262727;
+  --jl-fill-color-light: #1f1f1f;
+  --jl-fill-color-lighter: #191919;
+  --jl-fill-color-extra-light: #141414;
+  --jl-fill-color-dark: #2d2d2d;
+  --jl-fill-color-darker: #353535;
+  --jl-fill-color-blank: #1a1a1a;
+
+  /* 禁用状态 */
+  --jl-disabled-bg-color: #262727;
+  --jl-disabled-text-color: #6c6c6c;
+  --jl-disabled-border-color: #363637;
+}
