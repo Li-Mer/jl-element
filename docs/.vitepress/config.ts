@@ -25,23 +25,23 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
+      { text: "指南", link: "/start" },
     ],
 
     sidebar: [
       {
-        text: "Examples",
-        items: [
-          { text: "Markdown Examples", link: "/markdown-examples" },
-          { text: "Runtime API Examples", link: "/api-examples" },
-        ],
+        text: "指南",
+        items: [{ text: "快速开始", link: "/start" }],
       },
       {
-        text: "Basic",
-        items: [{ text: "Button", link: "/components/button" }],
+        text: "组件列表",
+        items: [
+          { text: "Button 按钮", link: "/components/button" },
+          { text: "Collapse 折叠面板", link: "/components/collapse" },
+        ],
       },
     ],
 
-    socialLinks: [{ icon: "github", link: "https://github.com/vuejs/vitepress" }],
+    socialLinks: [{ icon: "github", link: "https://github.com/Li-Mer/jl-element" }],
   },
 });

@@ -19,6 +19,16 @@ description: Button 组件的文档
 
 <preview path="../demo/Button/Disabled.vue" title="禁用状态" description="Button 组件的禁用状态"></preview>
 
+## 加载状态
+
+使用 `loading` 属性来设置按钮的加载状态。
+<preview path="../demo/Button/Loading.vue" title="加载状态" description="Button 组件的加载状态"></preview>
+
+## 不同大小
+
+使用 `size` 属性来设置按钮的大小。
+<preview path="../demo/Button/Size.vue" title="不同大小" description="Button 组件的不同大小"></preview>
+
 ### Button Attributes
 
 | Name        | Description                            | Type                                                             | Default |

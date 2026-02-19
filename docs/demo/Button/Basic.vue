@@ -1,42 +1,42 @@
 <template>
   <div class="button-example">
     <div class="button-row">
-      <Button>Button</Button>
-      <Button type="primary">Primary</Button>
-      <Button type="danger">Danger</Button>
-      <Button type="success">Success</Button>
-      <Button type="warning">Warning</Button>
-      <Button type="info">Info</Button>
+      <jl-button>Button</jl-button>
+      <jl-button type="primary">Primary</jl-button>
+      <jl-button type="danger">Danger</jl-button>
+      <jl-button type="success">Success</jl-button>
+      <jl-button type="warning">Warning</jl-button>
+      <jl-button type="info">Info</jl-button>
     </div>
     <div class="button-row">
-      <Button plain>Plain</Button>
-      <Button type="primary" plain>Primary</Button>
-      <Button type="danger" plain>Danger</Button>
-      <Button type="success" plain>Success</Button>
-      <Button type="warning" plain>Warning</Button>
-      <Button type="info" plain>Info</Button>
+      <jl-button plain>Plain</jl-button>
+      <jl-button type="primary" plain>Primary</jl-button>
+      <jl-button type="danger" plain>Danger</jl-button>
+      <jl-button type="success" plain>Success</jl-button>
+      <jl-button type="warning" plain>Warning</jl-button>
+      <jl-button type="info" plain>Info</jl-button>
     </div>
     <div class="button-row">
-      <Button round>Round</Button>
-      <Button type="primary" round>Primary</Button>
-      <Button type="danger" round>Danger</Button>
-      <Button type="success" round>Success</Button>
-      <Button type="warning" round>Warning</Button>
-      <Button type="info" round>Info</Button>
+      <jl-button round>Round</jl-button>
+      <jl-button type="primary" round>Primary</jl-button>
+      <jl-button type="danger" round>Danger</jl-button>
+      <jl-button type="success" round>Success</jl-button>
+      <jl-button type="warning" round>Warning</jl-button>
+      <jl-button type="info" round>Info</jl-button>
     </div>
     <div class="button-row">
-      <Button icon="question" circle></Button>
-      <Button type="primary" icon="backward" circle></Button>
-      <Button type="danger" icon="question" circle></Button>
-      <Button type="success" icon="question" circle></Button>
-      <Button type="warning" icon="question" circle></Button>
-      <Button type="info" icon="question" circle></Button>
+      <jl-button icon="question" circle></jl-button>
+      <jl-button type="primary" icon="backward" circle></jl-button>
+      <jl-button type="danger" icon="star" circle></jl-button>
+      <jl-button type="success" icon="ban" circle></jl-button>
+      <jl-button type="warning" icon="at" circle></jl-button>
+      <jl-button type="info" icon="b" circle></jl-button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Button from "@/components/Button/Button.vue";
+import JlButton from "@/components/Button/Button.vue";
 
 defineOptions({
   name: "BasicButtonDemo",
