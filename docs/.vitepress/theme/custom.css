@@ -21,8 +21,3 @@ h6,
 p {
   color: var(--vp-c-text-1);
 }
-
-.vp-doc table {
-  width: 100%;
-  display: table;
-}

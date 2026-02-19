@@ -20,7 +20,7 @@ import { createPopper } from "@popperjs/core";
 import useClickOutside from "../../hooks/useClickOutside";
 import { debounce } from "lodash-es";
 const props = withDefaults(defineProps<TooltipProps>(), {
-  trigger: "click",
+  trigger: "hover",
   placement: "bottom",
   transition: "fade",
   openDelay: 100,
