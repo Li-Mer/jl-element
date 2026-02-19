@@ -1,6 +1,6 @@
 <template>
   <div class="basic block">
-    <jl-collapse v-model="openedValue">
+    <jl-collapse v-model="openedValue" accordion>
       <jl-collapse-item name="a" title="Consistency">
         <h1>headline title</h1>
         <div>
@@ -13,7 +13,7 @@
       <jl-collapse-item name="b" title="Title B">
         <div>this is bbbbb test</div>
       </jl-collapse-item>
-      <jl-collapse-item name="c" title="Disabled Title" disabled>
+      <jl-collapse-item name="c" title="Title C">
         <div>this is cccc test</div>
       </jl-collapse-item>
     </jl-collapse>
@@ -25,9 +25,9 @@ import { ref } from "vue";
 import JlCollapse from "@/components/Collapse/Collapse.vue";
 import JlCollapseItem from "@/components/Collapse/CollapseItem.vue";
 
-const openedValue = ref(["a"]);
+const openedValue = ref(["a", "b"]);
 defineOptions({
-  name: "BasicCollapseDemo",
+  name: "AccordionCollapseDemo",
 });
 </script>
 
