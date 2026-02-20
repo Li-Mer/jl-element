@@ -1,6 +1,6 @@
 <template>
   <div class="tooltip-base-box">
-    <jl-tooltip trigger="click">
+    <jl-tooltip>
       <template #content>
         <div>
           <p>这是一个复杂文本内容的 Tooltip</p>
