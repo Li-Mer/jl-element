@@ -12,6 +12,8 @@ import type { TooltipInstance } from "./components/Tooltip/types";
 import type { Options } from "@popperjs/core";
 import Dropdown from "./components/Dropdown/Dropdown.vue";
 import type { MenuOption } from "./components/Dropdown/types";
+import Message from "./components/Message/Message.vue";
+import { createMessage } from "./components/Message/method";
 const buttonRef = ref<ButtonInstance | null>(null);
 const openedValue = ref(["a"]);
 const size = ref<any>("3x");
@@ -44,6 +46,9 @@ const inlineConsole = (...args: any) => {
   console.log(...args);
 };
 onMounted(() => {
+  createMessage({ message: "hello world", duration: 0, showClose: true });
+  createMessage({ message: "hello world again", duration: 0, type: "success", showClose: true });
+  createMessage({ message: "hello world three", duration: 0, type: "danger", showClose: true });
   console.log(buttonRef.value?.ref); // 这里可以访问到 Button 组件实例
 
   if (overlayNode.value && triggerNode.value) {
@@ -66,6 +71,7 @@ onMounted(() => {
 
 <template>
   <header>
+    <!-- <Message message="This is a message" type="success" :duration="2000" show-close /> -->
     <Dropdown
       content="This is a tooltip"
       :trigger="trigger"
