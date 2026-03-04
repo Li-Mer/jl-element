@@ -4,6 +4,7 @@ import Dropdown from "@/components/Dropdown";
 import Icon from "@/components/Icon";
 import Collapse, { CollapseItem } from "@/components/Collapse";
 import Tooltip from "@/components/Tooltip";
+import { createMessage, closeAll } from "@/components/Message";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import "@/styles/index.css";
@@ -32,6 +33,8 @@ export {
   CollapseItem as JlCollapseItem,
   Tooltip,
   Tooltip as JlTooltip,
+  createMessage,
+  closeAll,
 };
 
 export default { install };
