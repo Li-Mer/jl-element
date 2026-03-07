@@ -36,5 +36,7 @@ export {
   createMessage,
   closeAll,
 };
+export { useLocale, setLocale, zhCn, en } from "./locale";
+export type { Language, TranslatePair } from "./locale/types";
 
 export default { install };

@@ -14,6 +14,14 @@ import Dropdown from "./components/Dropdown/Dropdown.vue";
 import type { MenuOption } from "./components/Dropdown/types";
 import Message from "./components/Message/Message.vue";
 import { createMessage } from "./components/Message/method";
+import { useLocale, setLocale, zhCn, en } from "./locale/index";
+
+const { t, locale } = useLocale();
+
+const toggleLanguage = () => {
+  setLocale(locale.value.name === "en" ? zhCn : en);
+};
+
 const buttonRef = ref<ButtonInstance | null>(null);
 const openedValue = ref(["a"]);
 const size = ref<any>("3x");
@@ -48,7 +56,7 @@ const inlineConsole = (...args: any) => {
 onMounted(() => {
   createMessage({ message: "hello world", duration: 0, showClose: true });
   createMessage({ message: "hello world again", duration: 0, type: "success", showClose: true });
-  createMessage({ message: "hello world three", duration: 0, type: "danger", showClose: true });
+  createMessage({ message: "hello world three", duration: 0, type: "error", showClose: true });
   console.log(buttonRef.value?.ref); // 这里可以访问到 Button 组件实例
 
   if (overlayNode.value && triggerNode.value) {
@@ -70,6 +78,13 @@ onMounted(() => {
 </script>
 
 <template>
+  <div style="background: #f0f0f0; padding: 10px; margin: 10px 0">
+    <Button @click="toggleLanguage"> 切换语言 ({{ locale.name }}) </Button>
+
+    <!-- 显示翻译结果 -->
+    <p>{{ t("jl.datepicker.today") }}</p>
+    <p>{{ t("jl.colorpicker.confirm") }}</p>
+  </div>
   <header>
     <!-- <Message message="This is a message" type="success" :duration="2000" show-close /> -->
     <Dropdown
@@ -115,6 +130,7 @@ onMounted(() => {
     <Button size="small">Small</Button><br /><br />
     <Button size="large" loading>Loading</Button>
     <Button size="large" icon="arrow-up">Icon</Button><br /><br />
+
     <Collapse v-model="openedValue">
       <CollapseItem name="a" title="Title A">
         <h1>headline title</h1>
