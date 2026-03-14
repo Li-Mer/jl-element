@@ -105,8 +105,8 @@
 </template>
 
 <script setup lang="ts">
-import JlTooltip from "@/components/Tooltip/Tooltip.vue";
-import JlButton from "@/components/Button/Button.vue";
+import { JlTooltip } from "@jinli6386/element";
+import { JlButton } from "@jinli6386/element";
 
 defineOptions({
   name: "BasicTooltipDemo",
@@ -130,3 +130,4 @@ defineOptions({
   margin-top: 10px;
 }
 </style>
+

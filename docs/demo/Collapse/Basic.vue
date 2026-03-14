@@ -22,8 +22,8 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import JlCollapse from "@/components/Collapse/Collapse.vue";
-import JlCollapseItem from "@/components/Collapse/CollapseItem.vue";
+import { JlCollapse } from "@jinli6386/element";
+import { JlCollapseItem } from "@jinli6386/element";
 
 const openedValue = ref(["a"]);
 defineOptions({
@@ -32,3 +32,4 @@ defineOptions({
 </script>
 
 <style scoped></style>
+

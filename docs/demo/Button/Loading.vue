@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import JlButton from "@/components/Button/Button.vue";
+import { JlButton } from "@jinli6386/element";
 defineOptions({
   name: "LoadingButtonDemo",
 });
@@ -20,3 +20,4 @@ defineOptions({
   gap: 16px;
 }
 </style>
+

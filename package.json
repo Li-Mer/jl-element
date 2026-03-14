@@ -1,6 +1,6 @@
 {
   "name": "@jinli6386/element",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Vue3 components library",
   "type": "module",
   "author": "Li Jin",
@@ -21,6 +21,7 @@
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/es/jl-element.js",
       "require": "./dist/umd/jl-element.umd.cjs"
     },

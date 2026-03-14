@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import JlButton from "@/components/Button/Button.vue";
-import { createMessage, closeAll } from "@/components/Message/method";
+import { JlButton } from "@jinli6386/element";
+import { createMessage, closeAll } from "@jinli6386/element";
 
 const open = () => {
   createMessage({ message: "这是一个消息提示", type: "info" });
@@ -25,3 +25,4 @@ defineOptions({
 </script>
 
 <style scoped></style>
+

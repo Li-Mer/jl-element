@@ -121,6 +121,7 @@ export default defineConfig({
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("../../src", import.meta.url)),
+        "@jinli6386/element": fileURLToPath(new URL("../../src/index.ts", import.meta.url)),
       },
     },
   },
